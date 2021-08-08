@@ -2,7 +2,6 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: %i[ show edit update destroy ]
   before_action :set_nearest_stations, only: %i[ show edit update]
 
-
   def index
     @properties = Property.all
   end
@@ -60,7 +59,7 @@ class PropertiesController < ApplicationController
         :address,
         :age,
         :note,
-        nearest_stations_attributes:
+        nearest_stations_attributes: {}#: [:route_name, :station_name, :time]??
       )
     end
 end
